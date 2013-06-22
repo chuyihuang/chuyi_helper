@@ -76,7 +76,7 @@ module ChuyiHelper
 	    #如果已經登入
 	    if session[:admin]
 	    	content_tag(:li) do
-	    		link_to(raw(%{<i class="icon-off"></i>登出}), logout_path, :method => :delete)
+	    		link_to(raw(%{<i class="icon-off"></i>登出}), admin_logout_path, :method => :delete)
 	    	end
 	    end
 	  end
