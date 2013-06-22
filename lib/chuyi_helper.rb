@@ -24,7 +24,7 @@ module ChuyiHelper
   	datetime.strftime("%Y/%m/%d %H:%M")
   end
 
-  def status(status, link_path)
+  def chuyi_status(status, link_path)
     #link_to status(area.status), status_admins_area_path(area), {class: "btn btn-warning", method: :post}
     case status
     when "enabled"
@@ -34,7 +34,7 @@ module ChuyiHelper
     end
   end
 
-  def target(target)
+  def chuyi_target(target)
   	case target
   	when "_self"
   		"原視窗"
@@ -45,7 +45,7 @@ module ChuyiHelper
 
 
   #畫面上方的訊息列
-  def message_box
+  def chuyi_message_box
   	css_class = ""
   	content = ""
   	if flash[:notice]
@@ -82,7 +82,7 @@ module ChuyiHelper
   end
 
   #主選單
-  def menu_item(controller, menu_name, path)
+  def chuyi_menu_item(controller, menu_name, path)
   	#判斷路徑與css
   	controller_name == controller ? klass = "active" : ""
   	content_tag(:li, class: klass) do
