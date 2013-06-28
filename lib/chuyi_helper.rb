@@ -34,6 +34,17 @@ module ChuyiHelper
     end
   end
 
+  #聯絡我們處理
+  def handle_status(status, link_path)
+    case status
+    when "read"
+      raw(link_to("已讀", link_path, {method: :post, class: "btn btn-success"}))
+    when "unread"
+      raw(link_to("未讀", link_path, {method: :post, class: "btn btn-warning"}))
+    end
+  end
+
+
   def chuyi_target(target)
   	case target
   	when "_self"
